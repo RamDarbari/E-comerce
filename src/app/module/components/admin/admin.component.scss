@@ -1,0 +1,16 @@
+div{
+    display: flex;
+}
+
+.sidebar{
+    background-color: #151419;
+}
+
+.body-footer {
+    flex-direction: column;
+    width: 100%;
+}
+
+.router-outlet-wrapper {
+    background-color: black;
+  }
