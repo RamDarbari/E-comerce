@@ -8,6 +8,8 @@ import { Router } from '@angular/router';
 })
 export class SidebarComponent {
   constructor(private _router:Router) {}
+
+  
   
 
   onLogout(){

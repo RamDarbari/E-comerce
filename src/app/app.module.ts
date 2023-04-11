@@ -22,6 +22,7 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CommonModule } from '@angular/common';
 // import { ToastrModule } from 'ngx-toastr';
 
 
@@ -53,6 +54,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     NgbModule,
     FontAwesomeModule,
     BrowserAnimationsModule,
+    CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
