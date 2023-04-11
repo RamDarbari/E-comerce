@@ -18,6 +18,10 @@ import { NotFoundComponent } from './authentications/not-found/not-found.compone
 import { SidebarComponent } from './module/components/sidebar/sidebar.component';
 import { DashboardComponent } from './module/components/dashboard/dashboard.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { CarouselModule } from 'ngx-owl-carousel-o';
+import { DragDropModule } from '@angular/cdk/drag-drop';
+import { ScrollingModule } from '@angular/cdk/scrolling';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // import { ToastrModule } from 'ngx-toastr';
 
 
@@ -36,6 +40,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     SidebarComponent,
     DashboardComponent,
     // ToastrModule
+    // CarouselModule,
+    // DragDropModule
 
   ],
   imports: [
@@ -46,6 +52,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     HttpClientModule,
     NgbModule,
     FontAwesomeModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

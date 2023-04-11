@@ -13,6 +13,10 @@
         <input type="text" id="name" name="brand" class="form-control" ngModel required placeholder="EX:ADIDAS">
       </div>
       <div class="form-group">
+        <label for="category">Product Category:</label>
+        <input type="text" id="category" name="category" class="form-control" ngModel required placeholder="EX:Electronics">
+      </div>
+      <div class="form-group">
         <label for="description">Product Description:</label>
         <textarea id="description" name="description" class="form-control" ngModel required
           placeholder="Describe here!!"></textarea>
@@ -54,6 +58,7 @@
         <tr>
           <th>Product Name</th>
           <th>Product Brand</th>
+          <th>Category</th>
           <th>Description</th>
           <th>Price</th>
           <th>Quantity</th>
@@ -63,15 +68,16 @@
       </thead>
       <tbody>
         <tr *ngFor="let product of productList">
-          <td>{{ product.productname }}</td>
+          <td>{{ product.name }}</td>
           <td>{{ product.brand }}</td>
-          <td>{{ product.description }}</td>
+          <td> {{product.category_id}} </td>  
+          <td>{{ product.desc}}</td>
           <td>{{ product.price }}</td>
           <td>{{ product.quantity }}</td>
           <td><img src="{{ product.image }}" alt="Product Image"></td>
           <td>
-            <button (click)="editProduct()" class="edit">Edit</button>
-            <button (click)="deleteProduct(product._id)" class="delete">Delete</button>
+            <!-- <i class="fa fa-pencil" aria-hidden="true" (click)="updateProduct(product._id)"></i> -->
+            <i class="fa fa-trash" aria-hidden="true" (click)="deleteProduct(product._id)"></i>
           </td>
         </tr>
       </tbody>

@@ -21,7 +21,7 @@ export class AuthenticationsService {
     }
   
     try {
-      const response = await axios.post('http://10.8.10.244:3000/register/signup', data, { headers: { "Content-Type": "application/json" } });
+      const response = await axios.post('http://10.8.10.81:3000/user/register', data, { headers: { "Content-Type": "application/json" } });
       localStorage.setItem('user', JSON.stringify(response.data));
       this.isuserLoggedIn.next(true);
       console.log('Sign up success!');
@@ -39,8 +39,11 @@ export class AuthenticationsService {
     // }
   
     try {
-      const response = await axios.post<any>('http://10.8.10.244:3000/login/userlogin', data);
+      console.log(data);
+      const response = await axios.post<any>('http://10.8.10.81:3000/user/login', data);
       const user = response.data;
+      console.log(user)
+      
       if (user) {
         localStorage.setItem('user', JSON.stringify(response.data));
         console.log("User Logged In Successfully");
@@ -73,10 +76,6 @@ export class AuthenticationsService {
     }
   }
 
-  // logout(): void {
-  //   localStorage.removeItem('user');
-  //   this.isuserLoggedIn.next(false);
-  //   this._router.navigate(['/login']);
-  // }
+
 
 }

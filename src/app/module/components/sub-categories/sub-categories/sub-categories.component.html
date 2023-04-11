@@ -1,0 +1,9 @@
+<div class="subcategories">
+    <h2 style="color: white; font-size: 40px; margin-top: 20px; text-decoration: underline;" class="d-flex justify-content-center text-center">Sub Categories</h2>
+    <div class="container d-flex" *ngFor="let subcategories of subcategoriesList">
+        <ul>
+            <li> <p >{{subcategories.name}}</p> </li>  
+            <img class="c-img" src={{subcategories.image}} alt="">
+        </ul>
+    </div>
+</div>

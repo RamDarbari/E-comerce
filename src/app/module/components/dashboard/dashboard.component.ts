@@ -13,6 +13,7 @@ export class DashboardComponent implements OnInit {
 
   loggedInUser: any;
   addProductMessage: string | undefined;
+  updateProductMessage: string | undefined
   productList: product[] = [];
 
   constructor(private _authService: AuthenticationsService, private _product: AddproductsService) { }
@@ -23,7 +24,6 @@ export class DashboardComponent implements OnInit {
   }
 
   async onSubmit(data: product, addProduct: NgForm) {
-    console.log(data);
     try {
       const response = await this._product.addProduct(data);
       console.log("Product added successfully");
@@ -40,7 +40,7 @@ export class DashboardComponent implements OnInit {
 
   async getProducts() {
     try {
-      const response = await this._product.productList().toPromise();
+     const response = await this._product.productList().toPromise();
       // console.log(response.data);
       this.productList = response.data;
     } catch (error) {
@@ -49,20 +49,30 @@ export class DashboardComponent implements OnInit {
   }
 
   async deleteProduct(_id: string) {
-
     console.log("test id ", _id);
-
     try {
       const response = await this._product.deleteProduct(_id);
-      console.log("Product deleted successfully");
+      console.log("Product deleted successfully"); 
+      this.getProducts()
     } catch (error) {
       console.error(error);
     }
 
   }
 
-  async editProduct() {
-
+  async updateProduct(_id: string,) {
+    try {
+      const response = await this._product.updateProduct(_id);
+      console.log("Product updated successfully");
+      if (response.data) {
+        this.updateProductMessage = "Product updated successfully";
+        this.getProducts();
+      }
+      setTimeout(() => this.updateProductMessage = undefined, 3000);
+    } catch (error) {
+      console.error(error);
+    }
   }
+
 
 }

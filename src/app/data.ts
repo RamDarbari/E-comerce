@@ -1,5 +1,5 @@
 export interface signUp{
-    name: string;
+    username: string;
     email: string;
     number: number
     password: string;
@@ -8,10 +8,10 @@ export interface signUp{
 }
 
 export interface login {
-    username: string;
+    // username: string;
     email: string;
     password: number;
-    passsword2:number;  
+    // passsword2:number;  
     
 
 }
@@ -21,11 +21,31 @@ export interface admin {
 }
 
 export interface product {
-    productname: string;
+    name: string;
     brand: string;
-    description: string;
-    price: number;
+    category_id: string
+    desc: string;
+    price: string   ;
     quantity: number;
     image: string,
     _id: string  
+    subcategoryId: string;
 }
+
+
+export interface category {
+    // id: string;
+    category: string;
+    name: string;
+    image: string
+    _id: string
+    // subcategories?: subCategory[];
+  }
+   
+ export interface Subcategory {
+    _id: string;
+    categoryId: string;
+    image: string
+    name: string;
+  }
+  

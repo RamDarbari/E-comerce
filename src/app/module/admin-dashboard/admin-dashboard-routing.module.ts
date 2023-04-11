@@ -6,16 +6,23 @@ import { ContactUsComponent } from '../components/contact-us/contact-us.componen
 import { DashboardComponent } from '../components/dashboard/dashboard.component';
 import { HomeComponent } from '../components/home/home.component';
 import { ProductsComponent } from '../components/products/products.component';
+// import { SubcategoryComponent } from '../components/subcategory/subcategory.component';
+import { AddtocartComponent } from '../components/add-to-cart/addtocart/addtocart.component';
+import { SubCategoriesComponent } from '../components/sub-categories/sub-categories/sub-categories.component';
 // import { AdminDashboardModule } from './admin-dashboard.module';
+
 
 const routes: Routes = [
   {path: '', component: AdminComponent, children: [
     {path: 'home', component: HomeComponent},
     {path: 'dashboard', component: DashboardComponent},
-    { path: 'product', component:  ProductsComponent },
+    { path: 'categories', component:  ProductsComponent },
+    { path: 'subcategory', component: SubCategoriesComponent },
     { path: 'about-us', component: AboutUsComponent },
     { path: 'contact-us', component: ContactUsComponent },
+    { path: 'add-to-cart', component: AddtocartComponent },
     {path: '', redirectTo: '/admin/home', pathMatch: 'full'},
+    // {path: 'product/subcategory', redirectTo: '/admin/subcategory', pathMatch: 'full'}
   ]},
 ];
 
